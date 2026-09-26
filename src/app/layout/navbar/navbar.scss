@@ -1,0 +1,145 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.navbar--scrolled {
+  border-bottom-color: var(--pm-border, #e3eae6);
+  box-shadow: 0 1px 0 rgba(11, 61, 46, 0.04), 0 8px 24px -16px rgba(11, 61, 46, 0.25);
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(155deg, var(--pm-emerald, #16825d), var(--pm-forest, #0b3d2e));
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--pm-slate, #5b6b63);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: var(--pm-ink, #101915);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--pm-emerald, #16825d);
+    transition: right 200ms ease;
+  }
+
+  &:hover::after {
+    right: 0;
+  }
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+// Authenticated-state avatar trigger — deliberately matches .shell__avatar
+// in app-shell.component.scss so a logged-in user sees the same visual
+// language whether they're on the public page or the dashboard.
+.navbar-avatar-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: box-shadow 150ms ease;
+
+  &:hover {
+    box-shadow: 0 0 0 3px var(--pm-mint-50, #eef7f2);
+  }
+}
+
+.navbar-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: var(--pm-forest, #0b3d2e);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mobile-panel {
+  border-top: 1px solid var(--pm-border, #e3eae6);
+  background-color: var(--pm-paper, #fff);
+  animation: pm-slide-down 180ms ease;
+}
+
+.mobile-link {
+  padding: 0.6rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--pm-ink, #101915);
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+
+  &:hover {
+    background-color: var(--pm-mint-50, #eef7f2);
+  }
+}
+
+@keyframes pm-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-panel {
+    animation: none;
+  }
+}

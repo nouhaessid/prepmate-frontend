@@ -1,0 +1,362 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  min-width: 0;
+  border: 1px solid var(--pm-border, #e3eae6);
+  border-radius: 16px;
+  background: var(--pm-paper, #fff);
+  padding: 1.5rem;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #cfe9dc;
+    box-shadow: 0 18px 40px -30px rgba(11, 61, 46, 0.4);
+  }
+}
+
+.performance-card {
+  grid-column: span 2;
+  min-height: 330px;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-label {
+  display: block;
+  color: var(--pm-slate, #5b6b63);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.card-title {
+  margin-top: 0.3rem;
+  color: var(--pm-ink, #101915);
+  font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: var(--pm-mint-50, #eef7f2);
+  color: var(--pm-emerald, #16825d);
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  mat-icon {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+  }
+}
+
+.performance-summary {
+  margin-top: 1.5rem;
+
+  > div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+  }
+
+  p {
+    margin-top: 0.2rem;
+    color: var(--pm-slate, #5b6b63);
+    font-size: 0.78rem;
+  }
+}
+
+.performance-score {
+  color: var(--pm-ink, #101915);
+  font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.performance-max {
+  color: var(--pm-slate, #5b6b63);
+  font-size: 0.9rem;
+}
+
+.chart {
+  position: relative;
+  height: 145px;
+  margin-top: 1rem;
+}
+
+.chart-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    width: 100%;
+    border-top: 1px dashed #e6eee9;
+  }
+}
+
+.chart-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart-area {
+  fill: url(#scoreFill);
+}
+
+.chart-path {
+  fill: none;
+  stroke: var(--pm-emerald, #16825d);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.chart-dot {
+  fill: #fff;
+  stroke: var(--pm-emerald, #16825d);
+  stroke-width: 3;
+}
+
+.chart-labels {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.4rem;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    color: var(--pm-slate, #5b6b63);
+    font-size: 0.65rem;
+  }
+}
+
+// ---------- Small metrics ----------
+
+.score-card,
+.streak-card {
+  min-height: 190px;
+}
+
+.metric-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--pm-mint-50, #eef7f2);
+  color: var(--pm-emerald, #16825d);
+
+  mat-icon {
+    font-size: 20px;
+  }
+}
+
+.metric-value {
+  margin-top: 1.25rem;
+  color: var(--pm-ink, #101915);
+  font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+
+  > span {
+    color: var(--pm-emerald, #16825d);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .metric-unit {
+    color: var(--pm-slate, #5b6b63);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+.metric-description {
+  margin-top: 0.3rem;
+  color: var(--pm-slate, #5b6b63);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.mini-progress {
+  height: 5px;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7eee9;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--pm-emerald, #16825d);
+  }
+}
+
+// ---------- Streak ----------
+
+.streak-days {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.streak-day {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: #f1f4f2;
+  color: #9aa8a1;
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  &--active {
+    background: var(--pm-emerald, #16825d);
+    color: #fff;
+  }
+}
+
+// ---------- Interviews ----------
+
+.interviews-card {
+  min-height: 190px;
+}
+
+// ---------- Strongest track ----------
+
+.track-card {
+  grid-column: span 1;
+  min-height: 190px;
+}
+
+.track-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.track-name {
+  margin-top: 0.4rem;
+  color: var(--pm-ink, #101915);
+  font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.track-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  strong {
+    color: var(--pm-emerald, #16825d);
+    font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+    font-size: 1.5rem;
+  }
+
+  span {
+    color: var(--pm-slate, #5b6b63);
+    font-size: 0.65rem;
+  }
+}
+
+.track-bar {
+  height: 6px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7eee9;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--pm-emerald, #16825d);
+  }
+}
+
+// ---------- Existing panels ----------
+
+.panel {
+  border-radius: 16px;
+  border: 1px solid var(--pm-border, #e3eae6);
+  background-color: var(--pm-paper, #fff);
+  padding: 1.5rem;
+}
+
+.panel--accent {
+  background: linear-gradient(
+    165deg,
+    #ffffff,
+    var(--pm-mint-50, #eef7f2)
+  );
+}
+
+.score-pill {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background-color: var(--pm-mint-50, #eef7f2);
+  color: var(--pm-emerald, #16825d);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+// ---------- Responsive ----------
+
+@media (max-width: 1023px) {
+  .performance-card {
+    grid-column: span 2;
+  }
+
+  .track-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 639px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-card,
+  .track-card {
+    grid-column: span 1;
+  }
+
+  .performance-card {
+    min-height: 300px;
+  }
+
+  .chart {
+    height: 125px;
+  }
+}

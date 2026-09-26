@@ -1,0 +1,34 @@
+.confirm-dialog {
+  padding: 1.75rem;
+  background: var(--pm-paper, #fff);
+}
+
+.confirm-dialog__title {
+  color: var(--pm-ink, #101915);
+  font-family: var(--pm-font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.confirm-dialog__message {
+  margin-top: 0.6rem;
+  color: var(--pm-slate, #5b6b63);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-dialog__confirm.mat-mdc-unelevated-button {
+  background: #c0562f;
+  color: #fff;
+
+  &:hover {
+    background: #a8481f;
+  }
+}

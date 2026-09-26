@@ -1,0 +1,133 @@
+.shell {
+  height: 100vh;
+}
+
+.shell__sidenav {
+  width: 260px;
+  border-right: 1px solid var(--pm-border, #e3eae6);
+  background-color: var(--pm-paper, #fff);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+}
+
+.shell__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 1.5rem;
+  text-decoration: none;
+}
+
+.shell__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.shell__nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--pm-slate, #5b6b63);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+
+  mat-icon {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+  }
+
+  &:hover {
+    background-color: var(--pm-mint-50, #eef7f2);
+    color: var(--pm-ink, #101915);
+  }
+}
+
+.shell__nav-link--active {
+  background-color: var(--pm-mint-50, #eef7f2);
+  color: var(--pm-emerald, #16825d);
+  font-weight: 600;
+}
+
+.shell__content {
+  background-color: var(--pm-mint-50, #eef7f2);
+}
+
+.shell__topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 64px;
+  padding: 0 1.25rem;
+  background-color: var(--pm-paper, #fff);
+  border-bottom: 1px solid var(--pm-border, #e3eae6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+// Avatar trigger — deliberately a plain button, not mat-icon-button.
+// mat-icon-button's internal padding is built for a 24px icon; putting a
+// custom 32px circle inside it makes the hover/focus ring sit off-center.
+// This matches .navbar-avatar-trigger in navbar.scss exactly, so the
+// authenticated avatar looks and behaves the same on the dashboard as it
+// does on the public page.
+.shell__avatar-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: box-shadow 150ms ease;
+
+  &:hover {
+    box-shadow: 0 0 0 3px var(--pm-mint-50, #eef7f2);
+  }
+}
+
+.shell__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: var(--pm-forest, #0b3d2e);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.shell__body {
+  padding: 2rem 1.5rem 3rem;
+}
+
+@media (min-width: 640px) {
+  .shell__body {
+    padding: 2.5rem 2.5rem 3.5rem;
+  }
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(155deg, var(--pm-emerald, #16825d), var(--pm-forest, #0b3d2e));
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
