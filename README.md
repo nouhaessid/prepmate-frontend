@@ -143,7 +143,7 @@ For the complete backend architecture, microservices, authentication, databases,
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_FRONTEND_REPOSITORY_URL
+git clone https://github.com/nouhaessid/prepmate-frontend.git
 cd prepmate-frontend
 ```
 
