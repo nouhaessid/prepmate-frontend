@@ -272,22 +272,6 @@ interface Step {
       </footer>
 
     </div>
-
-    <button
-                  type="button"
-                  matButton="filled"
-                  mat-button
-                >
-                  Start practicing free
-                </button>
-
-                <button
-                  type="button"
-                  
-                  mat-flat-button
-                >
-                  Start practicing free
-                </button>
   `,
   styleUrl: './landing.scss',
 })
